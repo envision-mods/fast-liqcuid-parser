@@ -74,7 +74,7 @@ class TagPaginateTest extends TestCase
 		$this->assertTemplateResult('', '{% paginate products by 1 %}{% for product in products %}{{ product.id }}{% endfor %}{% endpaginate %}');
 	}
 
-	const PAGINATION_ASSIGNS = array(
+	public const PAGINATION_ASSIGNS = array(
 		'HTTP_HOST' => 'example.com',
 		'HTTPS' => 'on',
 		'page' => 1,

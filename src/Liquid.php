@@ -105,11 +105,11 @@ class Liquid
 		}
 		// This case is needed for compound settings
 		switch ($key) {
-				case 'QUOTED_FRAGMENT':
-					return '(?:' . self::get('QUOTED_STRING') . '|[^\s,\|\'"]+)';
-				default:
-					return null;
-			}
+			case 'QUOTED_FRAGMENT':
+				return '(?:' . self::get('QUOTED_STRING') . '|[^\s,\|\'"]+)';
+			default:
+				return null;
+		}
 	}
 
 	/**

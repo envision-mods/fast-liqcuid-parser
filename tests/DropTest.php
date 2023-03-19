@@ -84,14 +84,14 @@ class DropTest extends TestCase
 
 		$template = new Template();
 		$template->parse(' {{ product.top_sales }} ');
-		$template->render(array('product' => new ProductDrop));
+		$template->render(array('product' => new ProductDrop()));
 	}
 
 	public function testNoKeyDrop()
 	{
 		$template = new Template();
 		$template->parse(' {{ product.invalid.unknown }}{{ product.false }} ');
-		$output = $template->render(array('product' => new ProductDrop));
+		$output = $template->render(array('product' => new ProductDrop()));
 		$this->assertEquals('  ', $output);
 	}
 

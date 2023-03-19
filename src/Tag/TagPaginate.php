@@ -76,6 +76,8 @@ class TagPaginate extends AbstractBlock
 	 * @param string $markup
 	 * @param array $tokens
 	 * @param FileSystem $fileSystem
+	 * @param mixed $i
+	 * @param mixed $n
 	 *
 	 * @throws \Liquid\Exception\ParseException
 	 *

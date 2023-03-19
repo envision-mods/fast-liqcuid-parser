@@ -79,7 +79,7 @@ class Local implements FileSystem
 			throw new ParseException("Empty template name");
 		}
 
-		$nameRegex = preg_match('/^[^.\/][a-zA-Z0-9_' . (Liquid::get('INCLUDE_ALLOW_EXT') ? '.' :  '') . '\/-]+$/', $templatePath);
+		$nameRegex = preg_match('/^[^.\/][a-zA-Z0-9_' . (Liquid::get('INCLUDE_ALLOW_EXT') ? '.' : '') . '\/-]+$/', $templatePath);
 
 		if ($nameRegex !== 1) {
 			throw new ParseException("Illegal template name '$templatePath'");

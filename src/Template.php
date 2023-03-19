@@ -25,7 +25,7 @@ use Liquid\Exception\MissingFilesystemException;
  */
 class Template
 {
-	const CLASS_PREFIX = '\Liquid\Cache\\';
+	public const CLASS_PREFIX = '\Liquid\Cache\\';
 
 	/**
 	 * @var Document The root of the node tree

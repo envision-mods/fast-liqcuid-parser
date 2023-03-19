@@ -43,6 +43,8 @@ abstract class AbstractTag
 	 * @param string $markup
 	 * @param array $tokens
 	 * @param FileSystem $fileSystem
+	 * @param mixed $i
+	 * @param mixed $n
 	 */
 	public function __construct($i, $n, $markup, array &$tokens, FileSystem $fileSystem = null)
 	{

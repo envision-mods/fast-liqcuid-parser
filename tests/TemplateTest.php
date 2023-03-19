@@ -13,7 +13,7 @@ namespace Liquid;
 
 class TemplateTest extends TestCase
 {
-	const CACHE_DIR = 'cache_dir';
+	public const CACHE_DIR = 'cache_dir';
 
 	/** @var string full path to cache dir  */
 	protected $cacheDir;
