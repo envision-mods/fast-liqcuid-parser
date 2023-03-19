@@ -1,0 +1,57 @@
+{
+    "name": "live627/fast-liquid-parser",
+    "type": "library",
+    "description": "Liquid template engine for PHP",
+    "keywords": [
+        "liquid",
+        "template"
+    ],
+    "homepage": "https://github.com/envision-mods/fast-liquid-parser",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guz Alexander",
+            "email": "kalimatas@gmail.com",
+            "homepage": "http://guzalexander.com"
+        },
+        {
+            "name": "Harald Hanek"
+        },
+        {
+            "name": "Mateo Murphy"
+        },
+        {
+            "name": "Alexey Kopytko",
+            "email": "alexey@kopytko.com",
+            "homepage": "https://www.alexeykopytko.com/"
+        },
+        {
+            "name": "John Rayes",
+            "email": "live627@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.8",
+        "friendsofphp/php-cs-fixer": "^2.16.4",
+        "infection/infection": ">=0.17.6",
+        "php-coveralls/php-coveralls": "^2.2",
+        "phpunit/phpunit": "^9.2.6"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Liquid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Liquid\\": "tests/"
+        }
+    }
+}
