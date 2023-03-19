@@ -1,7 +1,7 @@
 {
     "name": "live627/fast-liquid-parser",
     "type": "library",
-    "description": "Liquid template engine for PHP",
+    "description": "Liquid template parser for PHP. Designed to be fast.",
     "keywords": [
         "liquid",
         "template"
@@ -31,7 +31,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.2"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.8",
