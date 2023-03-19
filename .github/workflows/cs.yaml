@@ -1,46 +1,35 @@
 name: Code Style
-
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        php-version: ['7.3']
-
-    name: PHP ${{ matrix.php-version }}
-
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
-          extensions: 
-          coverage: pcov
-          tools: composer:v1
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/composer
-          key: composer-${{ matrix.php-version }}-${{ hashFiles('**/composer.*') }}
-          restore-keys: |
-            composer-${{ matrix.php-version }}-
-            composer-
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
 
-      - name: Install dependencies
-        run: |
-          composer update --prefer-dist --no-interaction --no-progress ${{ matrix.dependencies }}
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
 
-      - name: Check code style
-        run: |
-          php vendor/bin/php-cs-fixer --using-cache=no --diff --dry-run --stop-on-violation --verbose fix
-          
+    - name: Check code style
+      run: composer run-script lint
